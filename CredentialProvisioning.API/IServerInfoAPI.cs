@@ -6,7 +6,7 @@ namespace Leosac.CredentialProvisioning.API
     {
         [Headers("Authorization: Bearer")]
         [Get("/GetAttributes")]
-        Task<string> GetAttributes();
+        Task<string[]> GetAttributes();
 
         [Get("/GetAPIVersion")]
         Task<string> GetAPIVersion();
