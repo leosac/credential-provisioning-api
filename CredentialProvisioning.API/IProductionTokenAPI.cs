@@ -49,7 +49,7 @@ namespace Leosac.CredentialProvisioning.API
         Task<CredentialFragmentTemplate> GetCredentialFragmentTemplate(string token, Guid fragmentTemplateId);
 
         [Get("/GetCredentialFragmentKeys")]
-        Task<CredentialKey[]> GetCredentialFragmentKeys(string token, Guid fragmentId, CredentialKeyScope scope);
+        Task<CredentialKey[]> GetCredentialFragmentKeys(string token, Guid fragmentId, CredentialKeyScope scope, Guid[]? keyIds = null);
 
         [Put("/NotifyCredentialQueued")]
         Task NotifyCredentialQueued(string token, Guid credId);
