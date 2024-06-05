@@ -36,6 +36,9 @@ namespace Leosac.CredentialProvisioning.API
         [Put("/ChangeCredentialState")]
         Task ChangeCredentialState(string token, Guid credId, ProvisioningState state);
 
+        [Put("/ReleaseCredentialLock")]
+        Task ReleaseCredentialLock(string token, Guid credId);
+
         [Put("/ChangeCredentialFragmentState")]
         Task ChangeCredentialFragmentState(string token, Guid fragmentId, ProvisioningState state);
 
