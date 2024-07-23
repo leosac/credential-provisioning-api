@@ -9,6 +9,9 @@ namespace Leosac.CredentialProvisioning.API
         [Post("/CreateToken")]
         Task<string> CreateToken(ProductionTokenRequest request);
 
+        [Post("/CreateCredential")]
+        Task<ObjectIdResponse<Guid?>> CreateCredential(string token);
+
         [Get("/GetProductionSets")]
         Task<IEnumerable<ProductionSet>> GetProductionSets();
 
