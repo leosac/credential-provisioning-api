@@ -31,13 +31,13 @@ namespace Leosac.CredentialProvisioning.API
         Task UpdateCredentialDataValue(string token, Guid credId, Guid dataId, string value);
 
         [Post("/UpdateCredentialDataValueEx")]
-        Task UpdateCredentialDataValueEx(string token, Guid credId, Guid dataId, [Body]string value);
+        Task UpdateCredentialDataValueEx(string token, Guid credId, Guid dataId, [Body(BodySerializationMethod.Serialized)] string value);
 
         [Put("/UpdateCredentialDataValueByName")]
         Task UpdateCredentialDataValueByName(string token, Guid credId, string name, string value);
 
         [Post("/UpdateCredentialDataValueByNameEx")]
-        Task UpdateCredentialDataValueByNameEx(string token, Guid credId, string name, [Body]string value);
+        Task UpdateCredentialDataValueByNameEx(string token, Guid credId, string name, [Body(BodySerializationMethod.Serialized)]string value);
 
         [Get("/GetCredentialFragments")]
         Task<IEnumerable<CredentialFragment>> GetCredentialFragments(string token, Guid credId);
