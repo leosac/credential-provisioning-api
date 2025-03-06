@@ -4,6 +4,7 @@ using Refit;
 
 namespace Leosac.CredentialProvisioning.API
 {
+    [Headers("Authorization: Bearer")]
     public interface IProductionTokenAPI
     {
         [Post("/CreateToken")]
