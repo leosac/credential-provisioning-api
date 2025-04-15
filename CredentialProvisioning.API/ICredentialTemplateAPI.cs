@@ -7,6 +7,6 @@ namespace Leosac.CredentialProvisioning.API
     public interface ICredentialTemplateAPI
     {
         [Get("/Get")]
-        Task<CredentialTemplate> Get(string templateId);
+        Task<CredentialTemplate> Get(string objId);
     }
 }

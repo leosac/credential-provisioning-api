@@ -7,7 +7,7 @@ namespace Leosac.CredentialProvisioning.API
     public interface IProductionSetAPI
     {
         [Get("/Get")]
-        Task<ProductionSet> Get(Guid prodsetId);
+        Task<ProductionSet> Get(Guid objId);
 
         [Get("/GetAllFiltered")]
         Task<IEnumerable<ProductionSet>> GetAll(ProvisioningState? filterState = ProvisioningState.Default);

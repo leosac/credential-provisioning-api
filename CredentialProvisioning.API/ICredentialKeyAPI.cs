@@ -11,15 +11,15 @@ namespace Leosac.CredentialProvisioning.API
         Task<Guid> Create(CredentialKey key);
 
         [Delete("/Delete")]
-        Task<Guid> Delete(Guid keyId);
+        Task<Guid> Delete(Guid objId);
 
         [Get("/Get")]
-        Task<CredentialKey> Get(Guid keyId);
+        Task<CredentialKey> Get(Guid objId);
 
         [Get("/GetAll")]
         Task<IEnumerable<CredentialKeyItem>> GetAllFiltered(string[]? keyTypes = null);
 
         [Post("/Update")]
-        Task Update(Guid keyId, CredentialKey key);
+        Task Update(CredentialKey key);
     }
 }
