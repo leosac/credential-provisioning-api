@@ -43,6 +43,12 @@ namespace Leosac.CredentialProvisioning.API
         [Post("/UpdateCredentialDataValueByNameEx")]
         Task UpdateCredentialDataValueByNameEx(string token, Guid credId, string name, [Body(BodySerializationMethod.Serialized)]string value);
 
+        [Get("/GetMissingDynamicFragmentTemplates")]
+        Task<IDictionary<Guid, CredentialFragmentTemplateBase[]>> GetMissingDynamicFragmentTemplates(string token, Guid credId);
+
+        [Put("/CreateManualDynamicFragment")]
+        Task<Guid?> CreateManualDynamicFragment(string token, Guid credId, Guid dynId, Guid fragmentTemplateId);
+
         [Get("/GetCredentialFragments")]
         Task<IEnumerable<CredentialFragment>> GetCredentialFragments(string token, Guid credId);
 
