@@ -17,7 +17,7 @@ namespace Leosac.CredentialProvisioning.API
         Task<ProductionToken> GetProductionToken(string token, bool waitForProductionCompletion);
 
         [Get("/GetProductionSets")]
-        Task<IEnumerable<ProductionSet>> GetProductionSets();
+        Task<IEnumerable<ProductionSet>> GetProductionSets([Query]string[]? tags = null);
 
         [Get("/GetNextCredentialId")]
         Task<ObjectIdResponse<Guid?>> GetNextCredentialId(string token, Guid? credId = null);
