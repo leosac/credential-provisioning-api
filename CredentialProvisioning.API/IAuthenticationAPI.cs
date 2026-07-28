@@ -7,5 +7,9 @@ namespace Leosac.CredentialProvisioning.API
     {
         [Post("/User/Authenticate")]
         Task<AuthenticationToken> Authenticate(AuthenticateWithUserPwdRequest request);
+
+        [Headers("Authorization: Bearer")]
+        [Post("/User/ChangePassword")]
+        Task ChangePassword(string oldPassword, string newPassword);
     }
 }
