@@ -56,16 +56,16 @@ namespace Leosac.CredentialProvisioning.API
         Task PrepareCredentialFragment(string token, Guid fragmentId);
 
         [Put("/ChangeCredentialState")]
-        Task ChangeCredentialState(string token, Guid credId, ProvisioningState state);
+        Task ChangeCredentialState(string token, Guid credId, ProvisioningState state, string? stateReason = null);
 
         [Put("/ReleaseCredentialLock")]
         Task ReleaseCredentialLock(string token, Guid credId);
 
         [Put("/ChangeCredentialFragmentState")]
-        Task ChangeCredentialFragmentState(string token, Guid fragmentId, ProvisioningState state);
+        Task ChangeCredentialFragmentState(string token, Guid fragmentId, ProvisioningState state, string? stateReason = null);
 
         [Put("/ChangeProductionSetState")]
-        Task ChangeProductionSetState(string token, ProvisioningState state);
+        Task ChangeProductionSetState(string token, ProvisioningState state, string? stateReason = null);
 
         [Get("/GetWorker")]
         Task<GetWorkerResponse> GetWorker(string token, Guid fragmentId);
